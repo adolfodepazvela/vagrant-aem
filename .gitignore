@@ -1,0 +1,6 @@
+
+aem/author/*
+aem/publisher/*
+*.zip
+*.jar
+*.box
