@@ -44,7 +44,7 @@ if os.path.isfile(packageList):
             c1.setopt(pycurl.USERPWD, password)
             file_name = "/tmp/install/packages/" + package
             #print file_name
-            c1.setopt(c1.HTTPPOST, [('file', (c1.FORM_FILE, file_name)), ('force', 'true'), ('install', 'true')])
+            c1.setopt(c1.HTTPPOST, [('file', (c1.FORM_FILE, file_name.strip())), ('force', 'true'), ('install', 'true')])
             c1.perform()
             print "Installed package " + package
             c1.close();

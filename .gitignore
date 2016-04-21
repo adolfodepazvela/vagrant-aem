@@ -4,3 +4,4 @@ aem/publisher/*
 *.zip
 *.jar
 *.box
+.vagrant

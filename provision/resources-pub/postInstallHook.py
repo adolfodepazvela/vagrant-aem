@@ -10,7 +10,7 @@ baseUrl="http://localhost:4503"
 password="admin:admin"
 
 packageList = "packagelist.txt"
-current_dir = os.getcwd()
+current_dir = "/tmp/install"
 print "Current directory " + current_dir
 if os.path.isfile(packageList):
     with open(packageList) as fp:
@@ -22,7 +22,7 @@ if os.path.isfile(packageList):
             c1.setopt(pycurl.USERPWD, password)
             file_name = current_dir + "/packages/" + package
             #print file_name
-            c1.setopt(c1.HTTPPOST, [('file', (c1.FORM_FILE, file_name)), ('force', 'true'), ('install', 'true')])
+            c1.setopt(c1.HTTPPOST, [('file', (c1.FORM_FILE, file_name.strip())), ('force', 'true'), ('install', 'true')])
             c1.perform()
             print "Installed package " + package
             c1.close();
