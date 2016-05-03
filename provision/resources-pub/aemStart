@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# description: AEM Start App
+# processname: AEM
+# chkconfig: - 99 02
+AEM_HOME=/aem/publisher/crx-quickstart/bin
+
+
+case "$1" in
+  start)
+    /bin/su vagrant $AEM_HOME/start
+    ;;
+
+  stop)
+    /bin/su vagrant $AEM_HOME/stop
+    ;;
+  *)
+     echo "Usage: $0 (start | stop)"
+     exit 1
+     ;;
+esac

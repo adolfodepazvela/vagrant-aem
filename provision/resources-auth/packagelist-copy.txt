@@ -1,0 +1,5 @@
+gc-content-canadasite-all-2.4.zip
+tags.zip
+gc-assets-all-2.4.zip
+gc-dictionary-2.4.zip
+gc-french-translations-1.0.zip
