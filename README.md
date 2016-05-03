@@ -3,7 +3,7 @@
 ## In Progress Version
 
 
-## Install the latest
+## Install the latest versions
 
 - Install Virtualbox
 - Install Vagrant 
