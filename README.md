@@ -15,7 +15,7 @@
 - vagrant package --output ubuntu64jdk8.box
 - vagrant box add precise/ubuntu64jdk8 ubuntu64jdk8.box
 
-## Cllone
+## Clone
 
 - git clone https://github.com/adolfodepazvela/vagrant-aem.git
 
