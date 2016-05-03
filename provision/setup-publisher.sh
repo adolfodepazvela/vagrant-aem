@@ -17,7 +17,7 @@ if [ ! -f "/aem/publisher/installed.aem" ]; then
 	cp -f /tmp/install/org.apache.sling.commons.log.LogManager.config $AEM_PATH/crx-quickstart/install/org.apache.sling.commons.log.LogManager.config
 	cp -f /tmp/install/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg $AEM_PATH/crx-quickstart/install/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg
 	cp -f /tmp/install/resources-pub/start $AEM_PATH/crx-quickstart/bin
-	sudo update-rc.d aemStart remove
+	sudo update-rc.d -f aemStart remove
 	sudo cp -f /tmp/install/resources-pub/aemStart /etc/init.d/
 	sudo chmod +x /etc/init.d/aemStart
 	sudo update-rc.d aemStart defaults
