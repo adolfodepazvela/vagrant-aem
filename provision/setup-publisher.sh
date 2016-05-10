@@ -6,8 +6,8 @@ if [ ! -f "/aem/publisher/installed.aem" ]; then
 	echo "Updating"
 	rsync -a -v --ignore-existing /tmp/install/aem-61.jar $AEM_PATH/cq-publish-4503.jar
 	rsync -a -v --ignore-existing /tmp/install/license.properties $AEM_PATH
-	rsync -a -v --ignore-existing /tmp/install/oak-run-1.2.2.jar $AEM_PATH
-	rsync -a -v --ignore-existing /tmp/install/compaction.sh $AEM_PATH
+	rsync -a -v --ignore-existing /tmp/install/oak-run-1.2.2.jar $AEM_PATH/oak-run.jar
+	rsync -a -v --ignore-existing /tmp/install/resources-pub/compaction.sh $AEM_PATH
 	rsync -a -v --ignore-existing /tmp/install/aemInstaller.py $AEM_PATH
 	rsync -a -v --ignore-existing /tmp/install/resources-pub/postInstallHook.py $AEM_PATH
 	rsync -a -v --ignore-existing /tmp/install/resources-pub/packagelist.txt $AEM_PATH

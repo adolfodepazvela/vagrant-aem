@@ -6,8 +6,8 @@ if [ ! -f "/aem/author/installed.aem" ]; then
 	echo "Updating"
 	rsync -a -v --ignore-existing /tmp/install/aem-61.jar $AEM_PATH/cq-author-4502.jar
 	rsync -a -v --ignore-existing /tmp/install/license.properties $AEM_PATH
-	rsync -a -v --ignore-existing /tmp/install/oak-run-1.2.2.jar $AEM_PATH
-	rsync -a -v --ignore-existing /tmp/install/compaction.sh $AEM_PATH
+	rsync -a -v --ignore-existing /tmp/install/oak-run-1.2.2.jar $AEM_PATH/oak-run.jar
+	rsync -a -v --ignore-existing /tmp/install/resources-auth/compaction.sh $AEM_PATH
 	rsync -a -v --ignore-existing /tmp/install/aemInstaller.py $AEM_PATH
 	rsync -a -v --ignore-existing /tmp/install/resources-auth/postInstallHook.py $AEM_PATH
 	rsync -a -v --ignore-existing /tmp/install/resources-auth/packagelist.txt $AEM_PATH
@@ -20,7 +20,7 @@ if [ ! -f "/aem/author/installed.aem" ]; then
 	sudo update-rc.d -f aemStart remove
 	sudo cp -f /tmp/install/resources-auth/aemStart /etc/init.d/
 	sudo chmod +x /etc/init.d/aemStart
-	sudo update-rc.d aemStart start 30 2 3 4 5 . stop 20 0 1 6 .
+	sudo update-rc.d aemStart defaults
 	
 	python aemInstaller.py -i cq-author-4502.jar -r author -p 4502
 	cat > $AEM_PATH/installed.aem
