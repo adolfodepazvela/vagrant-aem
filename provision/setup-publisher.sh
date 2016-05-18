@@ -3,6 +3,9 @@ echo "Provisioning Publisher virtual machine..."
 AEM_PATH="/aem/publisher"
 
 if [ ! -f "/aem/publisher/installed.aem" ]; then
+	echo "set Locale"
+	sudo locale-gen en_US en_US.UTF-8
+	sudo dpkg-reconfigure locales
 	echo "Updating"
 	rsync -a -v --ignore-existing /tmp/install/aem-61.jar $AEM_PATH/cq-publish-4503.jar
 	rsync -a -v --ignore-existing /tmp/install/license.properties $AEM_PATH

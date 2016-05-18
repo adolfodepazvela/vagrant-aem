@@ -31,7 +31,7 @@ fi
 
 # default JVM options
 if [ -z "$CQ_JVM_OPTS" ]; then
-	CQ_JVM_OPTS='-server -Xmx2024m -XX:MaxPermSize=256M -Djava.awt.headless=true -Duser.timezone=America/New_York'
+	CQ_JVM_OPTS='-server -Xmx2024m -XX:MaxPermSize=256M -Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8 -Djava.awt.headless=true -Duser.timezone=America/New_York'
 fi
 
 # file size limit (ulimit)
