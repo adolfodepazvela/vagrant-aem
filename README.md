@@ -10,10 +10,17 @@
 
 ## Prepare the Java Machine
 
+*JDK 8*
 - git clone https://github.com/adolfodepazvela/java-8-ubuntu-precise.git
 - vagrant up
 - vagrant package --output ubuntu64jdk8.box
 - vagrant box add precise/ubuntu64jdk8 ubuntu64jdk8.box
+
+*JDK7*
+- git clone https://github.com/adolfodepazvela/java-7-ubuntu-precise.git
+- vagrant up
+- vagrant package --output ubuntu64jdk7.box
+- vagrant box add precise/ubuntu64jdk7 ubuntu64jdk7.box
 
 ## Clone
 
