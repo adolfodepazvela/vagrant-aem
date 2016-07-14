@@ -48,6 +48,13 @@
 - $ sudo service aemStart start
 - http://192.168.56.101:4502
 
+## Author JDK7
+
+- vagrant up authorB
+- vagrant ssh authorB or via putty
+- $ sudo service aemStartB start
+- http://192.168.56.101:4502
+
 ## Publisher 
 
 - vagrant up author

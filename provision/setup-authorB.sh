@@ -19,7 +19,7 @@ if [ ! -f "/aem/authorB/installed.aem" ]; then
 	mkdir $AEM_PATH/crx-quickstart/install
 	cp -f /tmp/install/org.apache.sling.commons.log.LogManager.config $AEM_PATH/crx-quickstart/install/org.apache.sling.commons.log.LogManager.config
 	cp -f /tmp/install/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg $AEM_PATH/crx-quickstart/install/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg
-	cp -f /tmp/install/resources-auth/start $AEM_PATH/crx-quickstart/bin
+	cp -f /tmp/install/resources-auth/startB $AEM_PATH/crx-quickstart/bin/start
 	sudo update-rc.d -f aemStart remove
 	sudo cp -f /tmp/install/resources-auth/aemStartB /etc/init.d/
 	sudo chmod +x /etc/init.d/aemStartB
