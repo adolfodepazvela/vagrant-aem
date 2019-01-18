@@ -1,7 +1,4 @@
 *.properties
-aem/author/*
-aem/authorB/*
-aem/publisher/*
 *.zip
 *.jar
 *.box

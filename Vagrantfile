@@ -6,9 +6,9 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "provision", "/tmp/install"
 
   	config.vm.define "author", primary: true do |author|
- 		author.vm.box = "precise/ubuntu64jdk8"
+ 		author.vm.box = "adpv/precise64-java8"
     	author.vm.hostname = 'author'
-    	author.vm.box_url = "precise/ubuntu64jdk8"
+    	author.vm.box_url = "adpv/precise64-java8"
     	author.vm.network :private_network, ip: "192.168.56.101"
     	author.vm.network :forwarded_port, guest: 4502, host: 4502, auto_correct: true
     	author.vm.network :forwarded_port, guest: 4504, host: 4504, auto_correct: true
@@ -22,28 +22,11 @@ Vagrant.configure(2) do |config|
     		s.path = "provision/setup-author.sh"
     	end
   	end
-    
-  	config.vm.define "authorB", primary: true do |authorB|
- 		authorB.vm.box = "precise/ubuntu64jdk7"
-    	authorB.vm.hostname = 'authorB'
-    	authorB.vm.box_url = "precise/ubuntu64jdk7"
-    	authorB.vm.network :private_network, ip: "192.168.56.111"
-    	authorB.vm.network :forwarded_port, guest: 4504, host: 4504, auto_correct: true
-    	authorB.vm.network :forwarded_port, guest: 4506, host: 4506, auto_correct: true
-    	authorB.vm.synced_folder "aem/authorB", "/aem/authorB"
-    	authorB.vm.provider :virtualbox do |v|
-      		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      		v.customize ["modifyvm", :id, "--memory", 3048]
-      		v.customize ["modifyvm", :id, "--name", "authorB"]
-    	end
-    	authorB.vm.provision "shell" do |s|
-    		s.path = "provision/setup-authorB.sh"
-    	end
-  	end
+   
   	config.vm.define "publisher", autostart: false do |publisher|
- 		publisher.vm.box = "precise/ubuntu64jdk8"
+ 		publisher.vm.box = "adpv/precise64-java8"
     	publisher.vm.hostname = 'publisher'
-    	publisher.vm.box_url = "precise/ubuntu64jdk8"
+    	publisher.vm.box_url = "adpv/precise64-java8"
     	publisher.vm.network :private_network, ip: "192.168.56.102"
     	publisher.vm.network :forwarded_port, guest: 4503, host: 4503, auto_correct: true
     	publisher.vm.network :forwarded_port, guest: 4505, host: 4505, auto_correct: true
@@ -64,6 +47,7 @@ Vagrant.configure(2) do |config|
     	dispatcher.vm.box_url = "ubuntu/precise64"
     	dispatcher.vm.network :private_network, ip: "192.168.56.103"
     	dispatcher.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
+    	dispatcher.vm.synced_folder "aem/dispatcher", "/aem/dispatcher"
     	dispatcher.vm.provider :virtualbox do |v|
       		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       		v.customize ["modifyvm", :id, "--memory", 1024]
