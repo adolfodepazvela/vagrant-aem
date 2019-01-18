@@ -5,22 +5,10 @@
 
 ## Install the latest versions
 
-- Install Virtualbox
-- Install Vagrant 
+- Install Vagrant : https://www.vagrantup.com/downloads.html
+- Install Virtual box : https://www.virtualbox.org/wiki/Downloads
+- Install Vagrant Manager : https://github.com/lanayotech/vagrant-manager/releases
 
-## Prepare the Java Machine
-
-*JDK 8*
-- git clone https://github.com/adolfodepazvela/java-8-ubuntu-precise.git
-- vagrant up
-- vagrant package --output ubuntu64jdk8.box
-- vagrant box add precise/ubuntu64jdk8 ubuntu64jdk8.box
-
-*JDK7*
-- git clone https://github.com/adolfodepazvela/java-7-ubuntu-precise.git
-- vagrant up
-- vagrant package --output ubuntu64jdk7.box
-- vagrant box add precise/ubuntu64jdk7 ubuntu64jdk7.box
 
 ## Clone
 
@@ -29,16 +17,10 @@
 
 ## Prepare 
 
-- Copy license.properties inside vagrant-aem/provision directory
-- Copy aem-61.jar inside vagrant-aem/provision directory
-- Copy oak-run-1.2.2.jar inside vagrant-aem/provision directory (http://mvnrepository.com/artifact/org.apache.jackrabbit/oak-run/1.2.2)
-
-### Create the following folders
-
-- mkdir vagrant-aem/aem
-- mkdir vagrant-aem/aem/author
-- mkdir vagrant-aem/aem/publisher
-- mkdir vagrant-aem/aem/dispatcher
+- Copy license.properties inside aem/auhtor directory
+- Copy license.properties inside aem/publisher directory
+- Copy aem-author-4502.jar inside aem/author directory
+- Copy aem-publish-4503.jar inside aem/publisher directory
 
 
 ## Author 
@@ -48,12 +30,6 @@
 - $ sudo service aemStart start
 - http://192.168.56.101:4502
 
-## Author JDK7
-
-- vagrant up authorB
-- vagrant ssh authorB or via putty
-- $ sudo service aemStartB start
-- http://192.168.56.101:4502
 
 ## Publisher 
 
